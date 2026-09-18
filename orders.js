@@ -16,6 +16,9 @@ function cancelOrder(order) {
 }
 
 function calculateLoyaltyPoints(order) {
+  if(order.total > 100) {
+    return Math.round((order.total / 10) * 1.5);
+  }
   return Math.round(order.total / 10);
 }
 
